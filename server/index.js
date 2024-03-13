@@ -10,7 +10,7 @@ app.use(cookieParser())
 app.use(express.urlencoded({extended: false}))
 
 // database
-mongoose.connect(process.env.MONGODB)
+mongoose.connect("mongodb+srv://hariprasanth3196:hari2002@cluster0.gtsfys8.mongodb.net/auth")
 .then(() => console.log("database connected"))
 .catch((err) => console.log("database not connected", err))
 
