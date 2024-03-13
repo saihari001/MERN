@@ -17,4 +17,4 @@ mongoose.connect(process.env.MONGODB)
 // middleware
 app.use('/', require('./routes/authRoutes'))
 
-app.listen(3001, () => console.log("Server Running"))
+app.listen(process.env.PORT, () => console.log("Server Running"))
