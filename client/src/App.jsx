@@ -10,7 +10,7 @@ import Dashboard from './pages/Dashboard'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 
-axios.defaults.baseURL="http://localhost:3001";
+axios.defaults.baseURL=process.env.REACT-APP-URL;
 axios.defaults.withCredentials=true;
 
 function App() {
