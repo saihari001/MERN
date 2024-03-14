@@ -22,7 +22,7 @@ const Login = () => {
         setData({})
         toast.success("Login successfull")
         localStorage.setItem('token', data.data)
-        window.location.replace('/dashboard')
+        navigate('/dashboard')
       }
     }
     catch(err){
