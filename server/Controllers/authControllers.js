@@ -113,15 +113,15 @@ const resetPassword = async(req, res) => {
 }
 
 const profile = async(req,res) => {
-    const tokenn = req.cookies.token;
+    const tokenn = await req.cookies.token;
     try{
-        if(!tokenn){
-            res.json({error: "pls login"})
-        }
-        else{
+        if(tokenn){
             const decoded = jwt.verify(tokenn, process.env.JWT_KEY)
             const user_profile = await userModel.findById(decoded._id)
-            res.json({user_profile})
+            res.json(user_profile)
+        }
+        else{
+            res.json({error: "pls login"})
         }
     }
     catch(err){
