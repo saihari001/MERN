@@ -16,16 +16,23 @@ const Dashboard = () => {
   }
   axios.defaults.withCredentials = true
   useEffect(() => {
-    axios.get('/profile')
-    .then(user => {
-      if(userexists){
-        toast.success("Authenticated successfull.")
-        setUsers(user.data.user_profile)
-      }})
-      .catch(err => {
-        toast.error(err.error)
-      })
-    }, [])
+    try{
+        const user = async() => {
+        const {data} = await axios.get('/profile')
+        if(userexists){
+          setUsers(data)
+          toast.success("Authentication success")
+        }
+        else{
+          toast.error("Authentication failed")
+        }
+      }
+      user()
+    }
+    catch(err){
+      console.log(err)
+    }
+  }, [])
 
   return (
     <div className='wrapper'>
