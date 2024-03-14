@@ -9,7 +9,6 @@ import {Toaster} from 'react-hot-toast'
 import Dashboard from './pages/Dashboard'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
-require("dotenv").config();
 
 axios.defaults.baseURL=process.env.BACKEND;
 axios.defaults.withCredentials=true;
