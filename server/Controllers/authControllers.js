@@ -11,7 +11,6 @@ const test = (req,res) => {
 const registerUser = async (req,res) => {
     try{
         const {name, email, password} = req.body;
-        console.log(password)
         const exists = await userModel.findOne({email});
         if(!password || password.length < 6){
             return res.json({
