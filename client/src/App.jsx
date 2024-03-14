@@ -10,7 +10,7 @@ import Dashboard from './pages/Dashboard'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 
-axios.defaults.baseURL=process.env.BACKEND;
+axios.defaults.baseURL='https://mern-authentication-server-ab1y.onrender.com';
 axios.defaults.withCredentials=true;
 
 function App() {
