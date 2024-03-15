@@ -80,7 +80,7 @@ const forgotPassword = async (req,res) => {
             from: 'saihomesrs@gmail.com',
             to: email,
             subject: 'Reset Password',
-            text: `http://localhost:5173/resetPassword/${encodedToken}`
+            text: `https://mern-authentication-23df.onrender.com/resetPassword/${encodedToken}`
         };
 
         transporter.sendMail(mailOptions, function(error, info){
