@@ -113,7 +113,7 @@ const resetPassword = async(req, res) => {
 }
 
 const profile = async(req,res) => {
-    const tokenn = await req.cookies.token;
+    const tokenn = await req.params.id;
     try{
         if(tokenn){
             const decoded = jwt.verify(tokenn, process.env.JWT_KEY)
