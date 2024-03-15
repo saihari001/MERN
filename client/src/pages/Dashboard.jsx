@@ -18,7 +18,8 @@ const Dashboard = () => {
   useEffect(() => {
     try{
         const user = async() => {
-        const {data} = await axios.get('/profile')
+        const id = localStorage.getItem('token')
+        const {data} = await axios.get(`/profile/${id}`)
         if(userexists){
           setUsers(data)
           toast.success("Authentication success")
