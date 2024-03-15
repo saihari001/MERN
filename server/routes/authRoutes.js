@@ -15,7 +15,7 @@ router.use(
 router.get('/', test)
 router.post('/register', registerUser)
 router.post('/logIn', loginUser)
-router.get('/profile', profile)
+router.get('/profile/:id', profile)
 router.get('/logout', logout)
 router.post('/forgotPassword', forgotPassword)
 router.put('/resetPassword/:token', resetPassword)
